@@ -4,6 +4,7 @@
 
 import { NgModule } from '@angular/core';
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
+// import { ExtraOptions, RouterModule, Routes , PreloadAllModules} from '@angular/router';
 
 // Note there is no import of the HrFilesSearchComponent or reference
 // to './hr-files-search.component'.
@@ -11,13 +12,15 @@ import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo: 'hr', pathMatch: 'full' },
   { path: 'hr', loadChildren: './hr-files/hr.module#HrModule' },
+  { path: 'scotts', loadChildren: './scotts/scotts.module#ScottsModule' },
+  { path: 'bewlowScotts', loadChildren: './scotts/1/scotts.module#ScottsModule' },
   { path: 'payroll', loadChildren: './payroll/payroll.module#PayrollModule' }
 ];
 
 const config: ExtraOptions = {
   useHash: true,
   enableTracing: false // Turn this on to log routing events to the console
-  // ,preloadingStrategy: PreloadAllModules
+  // ,preloadingStrategy: PreloadAllModules //uncomment import above
 };
 
 @NgModule({

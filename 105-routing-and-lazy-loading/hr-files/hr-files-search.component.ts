@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   template: `
     <div class="card">
       <div class="card-content">
+        hello world
         <span class="card-title">HR Functionality</span>
         <div>Search for Employee HR Records</div>
         <search-box></search-box>

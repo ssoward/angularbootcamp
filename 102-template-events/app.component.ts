@@ -10,6 +10,7 @@ export class AppComponent {
   name = 'John Doe';
   message = 'Please Clock In';
   currentSchedule = 'Hover to see selected work times';
+  someEvent = 'not set yet';
 
   clockIn(event: MouseEvent) {
     if (event.shiftKey) {
@@ -21,6 +22,14 @@ export class AppComponent {
 
   clockOut() {
     this.message = 'Have a nice day!';
+  }
+
+  newEvent ( event: MouseEvent){
+     if (event.type === 'blur') {
+      this.someEvent = 'blur';
+    } else if (event.type === 'focus') {
+      this.someEvent = 'focus';
+    }
   }
 
   showSchedule(day: string) {

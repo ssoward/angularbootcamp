@@ -23,11 +23,18 @@
         <div class="day-1" (mouseover)="showSchedule('T')" style="height: 75px">T</div>
         <div class="day-2" (mouseover)="showSchedule('W')" style="height: 60px">W</div>
         <div class="day-3" (mouseover)="showSchedule('R')" style="height: 65px">R</div>
-        <div class="day-4" (mouseover)="showSchedule('F')" style="height: 80px">F</div>
       </div>
       <div>
         {{currentSchedule}}
       </div>
+      <br/>
+      <b>Some Event: <span [textContent]="someEvent"></span></b>
+      <br/>
+
+      <ul>
+        <li> 1. BLUR: <input class="day-4" [value]="someEvent" (blur)="newEvent($event)" style="height: 80px"/> </li>
+        <li> 2. FOCUS: <input class="day-4" [value]="someEvent" (focus)="newEvent($event)" style="height: 80px"/></li>
+      </ul>
     </div>
   </section>
 
